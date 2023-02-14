@@ -31,6 +31,8 @@ function createDocument(app: INestApplication) {
 async function bootstrap() {
   // 创建应用实例
   const app = await NestFactory.create(AppModule);
+  // 允许跨域
+  app.enableCors();
   // 设置全局api前缀
   app.setGlobalPrefix(GLOBAL_PREFIX);
   // 使用全局响应拦截器
