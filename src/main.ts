@@ -9,6 +9,7 @@ import {
   LISTEN_PORT,
 } from './app.config';
 import { AppModule } from './app.module';
+import { ResponseInterceptor } from './interceptors/response.interceptor';
 
 /**
  * 创建swagger文档
@@ -32,6 +33,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   // 设置全局api前缀
   app.setGlobalPrefix(GLOBAL_PREFIX);
+  // 使用全局响应拦截器
+  app.useGlobalInterceptors(new ResponseInterceptor());
   // 创建swagger文档
   createDocument(app);
   // 监听端口
