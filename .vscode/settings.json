@@ -1,3 +1,10 @@
 {
-  "conventionalCommits.scopes": ["global", "tsconfig", "main", "swagger"]
+  "conventionalCommits.scopes": [
+    "global",
+    "tsconfig",
+    "main",
+    "swagger",
+    "lint",
+    "app"
+  ]
 }
