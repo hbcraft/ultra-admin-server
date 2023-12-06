@@ -5,6 +5,7 @@
     "main",
     "swagger",
     "lint",
-    "app"
+    "app",
+    "config"
   ]
 }
