@@ -7,6 +7,8 @@
     "lint",
     "app",
     "config",
-    "interceptor"
+    "interceptor",
+    "user",
+    "vscode-setting"
   ]
 }
