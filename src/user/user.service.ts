@@ -17,8 +17,13 @@ export class UserService {
     return this.userRepository.find();
   }
 
-  findOne(id: number) {
-    return this.userRepository.findOneBy({ id });
+  async findOne(id: number): Promise<ExcludeKey<User, 'password'> | null> {
+    const user = await this.userRepository.findOneBy({ id });
+    if (user !== null) {
+      const { password, ...userInfo } = user;
+      return userInfo;
+    }
+    return user;
   }
 
   async remove(id: number): Promise<void> {
