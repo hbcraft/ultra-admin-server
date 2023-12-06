@@ -6,6 +6,7 @@
     "swagger",
     "lint",
     "app",
-    "config"
+    "config",
+    "interceptor"
   ]
 }
